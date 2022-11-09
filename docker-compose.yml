@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    build:
+      context: ./Docker
+      dockerfile: mysql.Dockerfile
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'teste-backend'
+      MYSQL_USER: 'teste-backend'
+      MYSQL_PASSWORD: 'teste-backend'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3309:3309'
+    expose:
+      - '3309'
+    volumes:
+      - my-db:/var/lib/mysql
+    networks:
+      - teste-network
+
+volumes:
+  my-db:
+
+networks:
+  teste-network:

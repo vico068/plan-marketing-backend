@@ -1,0 +1,216 @@
+openapi: 3.0.0
+paths:
+  /api/categories:
+    get:
+      description: 'Listar categorias'
+      operationId: 3f5817a34833d0a1f4af4548dd3aeaba
+      responses:
+        '200':
+          description: OK
+        '422':
+          description: 'Missing Data'
+    post:
+      description: 'Cadastrar categorias'
+      operationId: 71fcad552bb0eaba9fb191fd8d8dcab0
+      parameters:
+        -
+          name: name
+          in: query
+          description: 'Nome do categorias'
+          required: true
+          type: string
+        -
+          name: description
+          in: query
+          description: 'Descricao do categorias'
+          required: false
+          type: string
+        -
+          name: category_id
+          in: query
+          description: 'Id da categoria do categorias'
+          required: true
+          type: string
+        -
+          name: active
+          in: query
+          description: 'Status do categorias'
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+  '/api/categories/{id}':
+    get:
+      description: 'Listar um categorias por id'
+      operationId: c68e76d323c008827a9e47398b1583de
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Id do categorias'
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: OK
+    put:
+      description: 'Atualizar um categorias'
+      operationId: 0e686b2748211cc688333ed705dc111f
+      parameters:
+        -
+          name: id
+          in: query
+          description: 'Id docategorias'
+          required: true
+          type: path
+        -
+          name: name
+          in: query
+          description: 'Nome do categorias'
+          required: false
+          type: string
+        -
+          name: description
+          in: query
+          description: 'Descricao do categorias'
+          required: false
+          type: string
+        -
+          name: category_id
+          in: query
+          description: 'Id da categoria do categorias'
+          required: false
+          type: string
+        -
+          name: active
+          in: query
+          description: 'Status do categorias'
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+    delete:
+      description: 'Deletar um categorias'
+      operationId: 4c12e22a7f8c617bd83bfa1fdc05428d
+      parameters:
+        -
+          name: id
+          in: query
+          description: 'Id docategorias'
+          required: true
+          type: path
+  /api/products:
+    get:
+      description: 'Listar produtos'
+      operationId: 1bfaa78d1c2c3848ab8165c5dadcad3e
+      responses:
+        '200':
+          description: OK
+        '422':
+          description: 'Missing Data'
+    post:
+      description: 'Cadastrar Produto'
+      operationId: e8185e307706e2cd84bbcf5171e2f09d
+      parameters:
+        -
+          name: name
+          in: query
+          description: 'Nome do produto'
+          required: true
+          type: string
+        -
+          name: description
+          in: query
+          description: 'Descricao do produto'
+          required: false
+          type: string
+        -
+          name: price
+          in: query
+          description: 'Preco do produto'
+          required: true
+          type: float
+        -
+          name: category_id
+          in: query
+          description: 'Id da categoria do produto'
+          required: true
+          type: string
+        -
+          name: active
+          in: query
+          description: 'Status do produto'
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+  '/api/products/{id}':
+    get:
+      description: 'Listar um produto por id'
+      operationId: 7ab21ddb713501f3d4c2914892c02a21
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Id do produto'
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: OK
+    put:
+      description: 'Atualizar um produto'
+      operationId: 6a7e11900844cd85cff66e662b82bd4c
+      parameters:
+        -
+          name: id
+          in: query
+          description: 'Id doproduto'
+          required: true
+          type: path
+        -
+          name: name
+          in: query
+          description: 'Nome do produto'
+          required: false
+          type: string
+        -
+          name: price
+          in: query
+          description: 'Preco do produto'
+          required: true
+          type: float
+        -
+          name: description
+          in: query
+          description: 'Descricao do produto'
+          required: false
+          type: string
+        -
+          name: category_id
+          in: query
+          description: 'Id da categoria do produto'
+          required: false
+          type: string
+        -
+          name: active
+          in: query
+          description: 'Status do produto'
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+    delete:
+      description: 'Deletar um produto'
+      operationId: e80a6ca46716acee6b47ea1ac91663c0
+      parameters:
+        -
+          name: id
+          in: query
+          description: 'Id doproduto'
+          required: true
+          type: path
